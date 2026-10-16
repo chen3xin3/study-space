@@ -1,0 +1,11 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "学习空间",
+  "version": "0.6.0",
+  "bundle": {
+    "android": {
+      "minSdkVersion": 28,
+      "versionCode": 6000
+    }
+  }
+}

@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="用于学习 HTML、CSS 与 JavaScript 的本地学习任务实验页。"
+    />
+    <title>学习任务实验室</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
+
+    <header class="page-header">
+      <p class="eyebrow">Web 基础练习</p>
+      <h1>学习任务实验室</h1>
+      <p>从一个有结构的静态页面开始，逐步加入样式、交互与异步数据。</p>
+    </header>
+
+    <main id="main-content" class="page-shell">
+      <section class="panel" aria-labelledby="summary-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">今日概览</p>
+            <h2 id="summary-title">任务进度</h2>
+          </div>
+          <p id="task-summary" class="summary-value">0 / 0 已完成</p>
+        </div>
+        <p>本页数据只用于课程练习，刷新页面后会重新加载。</p>
+      </section>
+
+      <section class="panel" aria-labelledby="add-task-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">新任务</p>
+            <h2 id="add-task-title">添加学习任务</h2>
+          </div>
+        </div>
+
+        <form id="task-form" novalidate>
+          <div class="field">
+            <label for="task-title">任务标题</label>
+            <input
+              id="task-title"
+              name="title"
+              type="text"
+              maxlength="60"
+              autocomplete="off"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="task-subject">所属科目</label>
+            <select id="task-subject" name="subject">
+              <option value="英语">英语</option>
+              <option value="数学">数学</option>
+              <option value="政治">政治</option>
+              <option value="专业课">专业课</option>
+              <option value="其他">其他</option>
+            </select>
+          </div>
+
+          <button type="submit">添加任务</button>
+        </form>
+      </section>
+
+      <section class="panel task-panel" aria-labelledby="task-list-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">任务清单</p>
+            <h2 id="task-list-title">我的任务</h2>
+          </div>
+          <div class="filter-group" aria-label="筛选任务">
+            <button type="button" data-filter="all" aria-pressed="true">全部</button>
+            <button type="button" data-filter="pending" aria-pressed="false">未完成</button>
+            <button type="button" data-filter="completed" aria-pressed="false">已完成</button>
+          </div>
+        </div>
+
+        <ul id="task-list" class="task-list">
+          <li class="empty-state">还没有任务，请使用上方表单添加。</li>
+        </ul>
+      </section>
+
+      <section class="panel" aria-labelledby="data-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">异步练习</p>
+            <h2 id="data-title">示例数据</h2>
+          </div>
+        </div>
+        <div class="action-row">
+          <button id="load-fake-tasks" type="button">加载模拟任务</button>
+          <button id="simulate-failure" type="button">模拟加载失败</button>
+          <button id="load-json-tasks" type="button">从本地 JSON 加载</button>
+          <button id="retry-load" type="button" hidden>重新尝试</button>
+        </div>
+        <p id="request-status" class="status-message" aria-live="polite">
+          尚未加载示例数据。
+        </p>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

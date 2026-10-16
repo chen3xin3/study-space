@@ -1,0 +1,98 @@
+.dashboard-page--cockpit {
+  --cockpit-ink: #18342d;
+  --cockpit-green: #176653;
+  --cockpit-orange: #e95f48;
+  --cockpit-gold: #e5ac4c;
+  position: relative;
+  min-width: 0;
+  overflow: clip;
+  color: var(--cockpit-ink);
+  background:
+    radial-gradient(circle at 88% 7%, rgba(233,95,72,.15), transparent 25%),
+    linear-gradient(145deg, #f6f0df, #dcebdd);
+  border-radius: 28px;
+}
+.dashboard-page--cockpit::before { content:""; position:absolute; inset:18px; pointer-events:none; border:1px solid rgba(23,102,83,.12); border-radius:22px; }
+.dashboard-page--cockpit > * { position:relative; z-index:1; }
+.dashboard-cockpit { position:relative; display:grid; grid-template-columns:minmax(330px,1.25fr) minmax(260px,.75fr); gap:1rem; min-width:0; padding:clamp(1rem,2.5vw,2rem); overflow:hidden; border:1px solid rgba(23,102,83,.2); border-radius:26px; background:rgba(255,252,241,.62); box-shadow:0 24px 55px rgba(39,72,56,.12); }
+.dashboard-cockpit__orbit { position:absolute; right:-65px; top:-95px; width:340px; height:340px; border:1px solid rgba(23,102,83,.16); border-radius:50%; pointer-events:none; }
+.dashboard-cockpit__orbit i { position:absolute; inset:35px; border:1px solid rgba(233,95,72,.15); border-radius:50%; }
+.dashboard-cockpit__orbit i:nth-child(2){inset:78px}.dashboard-cockpit__orbit i:nth-child(3){inset:120px;background:rgba(229,172,76,.13)}
+.dashboard-page--cockpit .countdown-card.time-card { z-index:1; min-height:330px; border:0; border-radius:30px 120px 30px 30px; color:#fff9e8; background:var(--cockpit-green); box-shadow:12px 12px 0 var(--cockpit-gold),0 25px 48px rgba(28,73,59,.2); }
+.dashboard-page--cockpit .countdown-card.time-card::after { border-color:rgba(255,255,255,.07); }
+.dashboard-page--cockpit .countdown-card .live-clock strong { font-size:clamp(2.4rem,5vw,4.8rem); }
+.dashboard-page--cockpit .countdown-card .time-card__countdown h1 { font-size:clamp(1.15rem,2.2vw,1.7rem); }
+.dashboard-page--cockpit .countdown-card .countdown__days { color:#ffd27b; font-size:clamp(2.8rem,7vw,5.5rem); }
+.dashboard-instruments { z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:.8rem; align-content:center; }
+.dashboard-instrument { display:flex; align-items:center; gap:.8rem; min-width:0; min-height:105px; padding:1rem; border:1px solid rgba(23,102,83,.18); border-radius:17px; background:rgba(255,255,255,.68); box-shadow:0 10px 24px rgba(38,79,62,.08); }
+.dashboard-instrument--tasks { grid-column:1/-1; color:#fff; background:var(--cockpit-orange); border-color:var(--cockpit-orange); box-shadow:8px 8px 0 rgba(132,49,36,.13); }
+.dashboard-instrument svg { flex:0 0 auto }.dashboard-instrument small,.dashboard-instrument strong { display:block }.dashboard-instrument small{opacity:.7}.dashboard-instrument strong{margin-top:.25rem;font-size:clamp(1.15rem,2.2vw,1.7rem);font-weight:800}
+.dashboard-insights { position:relative; display:grid; grid-template-columns:minmax(390px,1.25fr) minmax(260px,.75fr); gap:1rem; min-width:0; }
+.dashboard-page--cockpit .calendar-card,.dashboard-page--cockpit .growth-card,.dashboard-page--cockpit .task-list-card,.dashboard-page--cockpit .timer-card { border-color:rgba(23,102,83,.18); background:rgba(255,252,241,.72); box-shadow:0 14px 30px rgba(42,72,57,.1); }
+.dashboard-page--cockpit .calendar-card { min-height:390px; border-radius:22px 8px 22px 8px; }
+.dashboard-page--cockpit .calendar-day.is-today { color:#fff; background:var(--cockpit-orange); box-shadow:0 5px 13px rgba(233,95,72,.23); }
+.dashboard-page--cockpit .calendar-day.is-selected { outline-color:var(--cockpit-green); }
+.dashboard-page--cockpit .growth-card { display:block; min-height:390px; border-radius:8px 22px 8px 22px; padding:1.4rem; }
+.dashboard-page--cockpit .trend-panel { height:calc(100% - 50px); }
+.dashboard-page--cockpit .study-trend { min-height:250px; align-items:end; }
+.dashboard-page--cockpit .study-trend span { background:linear-gradient(180deg,var(--cockpit-orange),var(--cockpit-gold)); }
+.dashboard-execution { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(280px,.7fr); gap:1rem; min-width:0; }
+.dashboard-page--cockpit .task-list-card { border-radius:22px; }
+.dashboard-page--cockpit .task-add input { background:rgba(255,255,255,.62); }
+.dashboard-page--cockpit .timer-card { min-height:260px; border:0; border-radius:22px; color:#fff9e8; background:var(--cockpit-orange); box-shadow:10px 10px 0 rgba(132,49,36,.14); }
+.dashboard-page--cockpit .timer-card .focus-card__heading svg,.dashboard-page--cockpit .timer-card .focus-card__heading small { color:inherit; }
+.dashboard-page--cockpit .timer-card .primary-button { color:var(--cockpit-green); background:#fff8e8; }
+.dashboard-page--cockpit .timer-card .secondary-button,.dashboard-page--cockpit .timer-end-button { color:#fff; border-color:rgba(255,255,255,.55); background:rgba(255,255,255,.1); }
+.dashboard-page--cockpit .timer-card__focus-link { color:#fff8e8; }
+.dashboard-signal-loading,.dashboard-execution-loading { display:grid; min-height:180px; place-items:center; color:rgba(24,52,45,.65); border:1px dashed rgba(23,102,83,.24); border-radius:20px; }
+[data-theme="night"] .dashboard-page--cockpit { --cockpit-ink:#f0ead8; --cockpit-green:#72c6a6; --cockpit-orange:#e77962; --cockpit-gold:#d8b967; background:radial-gradient(circle at 88% 7%,rgba(231,121,98,.13),transparent 25%),linear-gradient(145deg,#1a1e1b,#29342d); }
+[data-theme="night"] .dashboard-cockpit { background:rgba(28,35,30,.76); }
+[data-theme="night"] .dashboard-page--cockpit .countdown-card.time-card { color:#f7efdd; background:#245b4c; }
+[data-theme="night"] .dashboard-instrument { color:#f0ead8; background:rgba(42,54,46,.86); }
+[data-theme="night"] .dashboard-instrument--tasks { color:#fff; background:#c85f4c; }
+[data-theme="night"] .dashboard-page--cockpit .calendar-card,[data-theme="night"] .dashboard-page--cockpit .growth-card,[data-theme="night"] .dashboard-page--cockpit .task-list-card { color:#f0ead8; background:rgba(37,45,39,.86); }
+@media (max-width:950px) { .dashboard-cockpit,.dashboard-insights,.dashboard-execution{grid-template-columns:1fr}.dashboard-page--cockpit .countdown-card.time-card{min-height:280px;border-radius:24px}.dashboard-instruments{grid-template-columns:repeat(3,minmax(0,1fr))}.dashboard-instrument--tasks{grid-column:auto}.dashboard-page--cockpit .calendar-card,.dashboard-page--cockpit .growth-card{min-height:auto}.dashboard-page--cockpit .study-trend{min-height:180px} }
+@media (max-width:620px) { .dashboard-page--cockpit{border-radius:18px}.dashboard-cockpit,.dashboard-insights,.dashboard-execution{width:100%;max-width:100%;overflow:hidden}.dashboard-cockpit{padding:.85rem}.dashboard-instruments{grid-template-columns:1fr}.dashboard-instrument{min-height:82px}.dashboard-page--cockpit .countdown-card.time-card{min-height:240px}.dashboard-page--cockpit .countdown-card .countdown__days{display:inline-block;font-size:clamp(2.6rem,16vw,4rem)}.dashboard-cockpit__orbit{opacity:.55}.dashboard-execution{grid-template-columns:1fr}.dashboard-page--cockpit .daily-task-list label span{white-space:normal;overflow-wrap:anywhere}.dashboard-page--cockpit .calendar-card{width:100%;max-width:100%;padding:.7rem}.dashboard-page--cockpit .calendar-card__header{align-items:stretch;flex-direction:column}.dashboard-page--cockpit .calendar-nav{justify-content:space-between}.dashboard-page--cockpit .calendar-nav__today{flex:1} }
+/* Final dashboard order: narrow tasks, wide calendar, then the wide seven-day trend. */
+.dashboard-main-grid { display:grid; grid-template-columns:minmax(270px,.72fr) minmax(430px,1.28fr); gap:1rem; min-width:0; align-items:stretch; }
+.dashboard-main-grid>.task-list-card,.dashboard-main-grid>.calendar-card { min-width:0; height:100%; }
+.dashboard-main-grid>.task-list-card { min-height:390px; }
+.dashboard-main-grid>.calendar-card { min-height:390px; border-radius:22px; }
+.dashboard-trend-grid { display:grid; grid-template-columns:minmax(420px,1.28fr) minmax(250px,.72fr); gap:1rem; min-width:0; }
+.dashboard-trend-grid>div { min-width:0; }
+.dashboard-trend-grid .growth-card { min-height:250px; border-radius:22px; }
+.dashboard-trend-grid .trend-panel { min-height:220px; }
+
+.today-review-card { display:grid; grid-template-columns:minmax(170px,.34fr) minmax(0,1fr); gap:1rem; align-items:center; min-width:0; padding:1.05rem 1.2rem; border:1px solid rgba(23,102,83,.18); border-radius:20px; background:rgba(255,252,241,.76); box-shadow:0 12px 28px rgba(42,72,57,.09); }
+.today-review-card__header { display:flex; align-items:center; justify-content:space-between; gap:.8rem; min-width:0; }
+.today-review-card__header span { color:var(--color-muted); font-size:.74rem; }
+.today-review-card__header h2 { margin:.2rem 0 0; font-size:1.2rem; }
+.today-review-card__header>strong { flex:0 0 auto; color:var(--cockpit-green); font-size:.82rem; }
+.today-review-card__body { display:flex; align-items:center; justify-content:space-between; gap:1rem; min-width:0; }
+.today-review-card__items { display:flex; flex-wrap:wrap; gap:.55rem; min-width:0; }
+.today-review-card__items span { padding:.48rem .72rem; border:1px solid rgba(23,102,83,.16); border-radius:999px; color:var(--cockpit-ink); background:rgba(255,255,255,.7); font-size:.8rem; font-weight:700; }
+.today-review-card__complete { display:flex; align-items:center; gap:.7rem; min-width:0; }
+.today-review-card__complete svg { flex:0 0 auto; color:var(--cockpit-green); }
+.today-review-card__complete strong,.today-review-card__complete span { display:block; }
+.today-review-card__complete span { margin-top:.2rem; color:var(--color-muted); font-size:.76rem; }
+.today-review-card__actions { display:flex; flex:0 0 auto; align-items:center; gap:.7rem; }
+.today-review-card__actions>a,.today-review-card__warning button { display:inline-flex; min-height:var(--touch-target); align-items:center; justify-content:center; gap:.35rem; border:0; border-radius:12px; padding:.55rem .85rem; font:inherit; font-size:.8rem; font-weight:750; cursor:pointer; text-decoration:none; }
+.today-review-card__actions>a { color:#fff; background:var(--cockpit-green); }
+.today-review-card__warning { display:flex; align-items:center; gap:.5rem; color:#9b4c38; font-size:.76rem; }
+.today-review-card__warning button { color:var(--cockpit-green); background:rgba(23,102,83,.08); }
+.today-review-card__state { grid-column:2; margin:0; color:var(--color-muted); }
+[data-theme="night"] .today-review-card { color:#f0ead8; background:rgba(37,45,39,.86); }
+
+@media (max-width:900px) {
+  .dashboard-main-grid,.dashboard-trend-grid { grid-template-columns:1fr; }
+  .dashboard-main-grid>.task-list-card { min-height:260px; }
+  .today-review-card { grid-template-columns:1fr; }
+  .today-review-card__state { grid-column:1; }
+}
+
+@media (max-width:620px) {
+  .today-review-card__header,.today-review-card__body,.today-review-card__actions,.today-review-card__warning { align-items:stretch; flex-direction:column; }
+  .today-review-card__actions>a,.today-review-card__warning button { width:100%; }
+}
+
+[data-input-mode="touch"] .today-review-card__actions>a,[data-input-mode="touch"] .today-review-card__warning button { min-height:var(--touch-target); }

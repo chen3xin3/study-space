@@ -1,0 +1,9 @@
+.learning-journey { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .55rem; min-width: 0; }
+.learning-journey a { display: flex; align-items: center; gap: .65rem; min-width: 0; padding: .7rem .8rem; border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent); border-radius: 14px; color: var(--color-muted); background: color-mix(in srgb, var(--color-surface) 80%, transparent); text-decoration: none; }
+.learning-journey a:hover { color: var(--color-text); border-color: color-mix(in srgb, var(--color-primary) 45%, var(--color-border)); }
+.learning-journey a.is-current { color: var(--color-primary-strong); border-color: color-mix(in srgb, var(--color-primary) 50%, transparent); background: var(--color-primary-soft); }
+.learning-journey small { font: 800 .62rem ui-monospace, monospace; letter-spacing: .12em; opacity: .7; }
+.learning-journey span { display: grid; min-width: 0; }
+.learning-journey strong { font-size: .84rem; }
+.learning-journey em { overflow: hidden; font-size: .65rem; font-style: normal; text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 620px) { .learning-journey { overflow-x: auto; grid-template-columns: repeat(3, minmax(130px, 1fr)); padding-bottom: .2rem; } }

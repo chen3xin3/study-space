@@ -1,0 +1,18 @@
+[package]
+name = "study-space-teaching-app"
+version = "0.1.0"
+description = "从零实现学习空间的教学应用"
+authors = ["Study Space Learner"]
+edition = "2021"
+publish = false
+
+[lib]
+name = "study_space_teaching_app_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+tauri = { version = "2", features = [] }

@@ -1,0 +1,14 @@
+pub mod ai_commands;
+pub mod dashboard_commands;
+pub mod data_commands;
+pub mod diagnostic_commands;
+pub mod desktop_commands;
+pub mod essay_commands;
+pub mod focus_commands;
+pub mod focus_plan_commands;
+pub mod inbox_commands;
+pub mod learning_item_commands;
+pub mod photo_commands;
+pub mod sync_commands;
+pub mod vocabulary_commands;
+pub mod vocabulary_import_commands;

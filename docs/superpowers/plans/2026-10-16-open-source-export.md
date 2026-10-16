@@ -20,31 +20,31 @@
 - Preserve: `docs/maintainers/2026-10-16-open-source-export-design.md`
 - Preserve: `docs/superpowers/plans/2026-10-16-open-source-export.md`
 
-- [ ] **Step 1: 记录原项目状态**
+- [x] **Step 1: 记录原项目状态**
 
 Run: `git -C D:\Desktop\app status --short`
 
 Expected: 输出当前未提交修改，仅作为复制前的对照基线。
 
-- [ ] **Step 2: 复制白名单内容**
+- [x] **Step 2: 复制白名单内容**
 
 Use PowerShell `Copy-Item -Recurse -Force` 分别复制上述目录和文件，不使用整个项目递归复制。
 
 Expected: 副本包含当前未提交的新文件和修改，但不含父仓库 `.git`。
 
-- [ ] **Step 3: 删除复制过程中带入的生成内容**
+- [x] **Step 3: 删除复制过程中带入的生成内容**
 
 Remove only these exact paths when present: `src-tauri/target`, `src-tauri/gen`, `docs/tutorial/.obsidian`.
 
 Expected: 副本中不存在构建产物和个人工作区状态。
 
-- [ ] **Step 4: 检查复制范围**
+- [x] **Step 4: 检查复制范围**
 
 Run: `Get-ChildItem -Force D:\Desktop\app\开源`
 
 Expected: 顶层只出现源码、项目配置、公开文档和新仓库 `.git`。
 
-- [ ] **Step 5: 提交快照**
+- [x] **Step 5: 提交快照**
 
 Run: `git add src src-tauri docs/tutorial index.html package.json package-lock.json tsconfig.app.json tsconfig.json tsconfig.node.json vite.config.ts && git commit -m "feat: import current study space source"`
 
