@@ -192,25 +192,25 @@ Run: `git add -A && git commit -m "chore: complete public source audit"` only wh
 **Files:**
 - Generated but ignored: `node_modules`, `dist`, `src-tauri/target`
 
-- [ ] **Step 1: 验证独立依赖安装**
+- [x] **Step 1: 验证独立依赖安装**
 
 Run: `npm ci`
 
 Expected: exit code 0 and dependencies installed only inside the open-source copy.
 
-- [ ] **Step 2: 运行全量前端测试**
+- [x] **Step 2: 运行全量前端测试**
 
 Run: `npm run test:run`
 
 Expected: all test files and tests pass; if the known dashboard timing test flakes, rerun its file once and document both results rather than hiding the first failure.
 
-- [ ] **Step 3: 运行前端生产构建**
+- [x] **Step 3: 运行前端生产构建**
 
 Run: `npm run build`
 
 Expected: exit code 0 and production files generated under ignored `dist`.
 
-- [ ] **Step 4: 运行 Rust 测试和检查**
+- [x] **Step 4: 运行 Rust 测试和检查**
 
 Run: `cargo test --manifest-path src-tauri/Cargo.toml`
 

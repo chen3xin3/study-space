@@ -71,7 +71,14 @@ cargo check --manifest-path src-tauri/Cargo.toml
 npm run tauri build
 ```
 
-Android 首次构建前还需要完成 Tauri Android 工程初始化。详细的 Windows 与 Android 环境准备、版本号和打包流程见 [第 45 章：构建、打包与发布](docs/tutorial/08-质量安全与发布篇/45-构建打包与发布.md)。
+Android 自动生成工程不放入 Git。首次构建时先初始化，再构建：
+
+```powershell
+npm run tauri android init
+npm run tauri android build
+```
+
+详细的 Windows 与 Android 环境准备、版本号和打包流程见 [第 45 章：构建、打包与发布](docs/tutorial/08-质量安全与发布篇/45-构建打包与发布.md)。
 
 ## 项目目录
 

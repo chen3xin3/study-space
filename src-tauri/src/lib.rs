@@ -296,7 +296,7 @@ pub fn run() {
             restore_lan_sync_backup,
         ])
         .run(tauri::generate_context!())
-        .expect("failed to run My Postgraduate Study Space");
+        .expect("failed to run Study Space");
 }
 
 #[cfg(test)]
@@ -310,17 +310,15 @@ mod platform_tests {
     }
 
     #[test]
-    fn android_release_keeps_cleartext_networking_disabled() {
-        let gradle = include_str!("../gen/android/app/build.gradle.kts");
-        let default_config = gradle
-            .split("defaultConfig {")
-            .nth(1)
-            .and_then(|value| value.split("buildTypes {").next())
-            .expect("Android defaultConfig must exist");
-        assert!(default_config.contains("manifestPlaceholders[\"usesCleartextTraffic\"] = \"false\""));
-        let manifest = include_str!("../gen/android/app/src/main/AndroidManifest.xml");
-        assert!(manifest.contains("android.permission.INTERNET"));
-        assert!(!manifest.contains("ACCESS_FINE_LOCATION"));
-        assert!(!manifest.contains("CHANGE_WIFI_MULTICAST_STATE"));
+    fn android_release_configuration_is_versioned_with_the_source() {
+        let config: serde_json::Value = serde_json::from_str(include_str!(
+            "../tauri.android.conf.json"
+        ))
+        .expect("Android Tauri configuration must be valid JSON");
+
+        assert_eq!(config["productName"], "学习空间");
+        assert_eq!(config["version"], "0.6.0");
+        assert_eq!(config["bundle"]["android"]["minSdkVersion"], 28);
+        assert_eq!(config["bundle"]["android"]["versionCode"], 6000);
     }
 }
