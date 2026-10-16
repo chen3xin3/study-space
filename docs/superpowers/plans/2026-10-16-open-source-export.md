@@ -136,25 +136,25 @@ Run: `git add docs/tutorial && git commit -m "docs: make tutorial paths portable
 - Create: `.github/pull_request_template.md`
 - Create: `.github/dependabot.yml`
 
-- [ ] **Step 1: 创建前端 CI**
+- [x] **Step 1: 创建前端 CI**
 
 Configure an Ubuntu job with Node.js 22, `npm ci`, `npm run test:run` and `npm run build`.
 
 Expected: pushes and pull requests to `main` automatically verify the front end.
 
-- [ ] **Step 2: 创建 Rust CI**
+- [x] **Step 2: 创建 Rust CI**
 
 Configure a Windows job with stable Rust, Cargo cache, `cargo test --manifest-path src-tauri/Cargo.toml` and `cargo check --manifest-path src-tauri/Cargo.toml`.
 
 Expected: Tauri backend is checked in an environment aligned with the desktop target.
 
-- [ ] **Step 3: 创建协作模板与 Dependabot**
+- [x] **Step 3: 创建协作模板与 Dependabot**
 
 Provide structured bug/feature forms, a pull request checklist and weekly npm/Cargo dependency update rules.
 
 Expected: issues and pull requests include reproducible information and dependency updates are visible.
 
-- [ ] **Step 4: 检查 YAML 与提交**
+- [x] **Step 4: 检查 YAML 与提交**
 
 Run a local YAML parser when available and inspect every workflow command against `package.json` and `src-tauri/Cargo.toml`.
 
