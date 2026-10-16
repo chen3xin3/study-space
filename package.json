@@ -2,6 +2,16 @@
   "name": "my-postgraduate-study-space",
   "private": true,
   "version": "0.6.0",
+  "description": "面向 Windows 和 Android 平板的本地优先学习管理应用",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chengxin23333-hue/study-space.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chengxin23333-hue/study-space/issues"
+  },
+  "homepage": "https://github.com/chengxin23333-hue/study-space#readme",
   "type": "module",
   "scripts": {
     "dev": "vite --port 1420",

@@ -1,0 +1,54 @@
+# Node.js / Vite
+node_modules/
+dist/
+.vite/
+coverage/
+
+# Rust / Tauri generated output
+target/
+src-tauri/target/
+src-tauri/gen/
+
+# Local application data
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite-*
+backups/
+attachments/
+
+# Secrets and machine-specific configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.jks
+*.keystore
+local.properties
+
+# Editors and operating systems
+.idea/
+.vscode/
+.obsidian/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# Local build and release artifacts
+artifacts/
+release/
+.visual-qa/
+.android-tools/
+.gradle/
+

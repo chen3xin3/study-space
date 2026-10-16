@@ -62,37 +62,37 @@ Expected: 创建只包含公开源码的第二个提交。
 - Replace: `README.md`
 - Modify: `package.json`
 
-- [ ] **Step 1: 创建开源 `.gitignore`**
+- [x] **Step 1: 创建开源 `.gitignore`**
 
 Include dependency/build paths plus `.env`, `.env.*`, `!.env.example`, `*.db`, `*.sqlite*`, `*.pem`, `*.key`, `*.pfx`, `*.p12`, `.obsidian/`, IDE state, logs and platform-generated directories.
 
 Expected: 本地数据、凭证和可重建产物默认不受 Git 跟踪。
 
-- [ ] **Step 2: 创建 MIT 许可证**
+- [x] **Step 2: 创建 MIT 许可证**
 
 Use copyright line: `Copyright (c) 2026 chengxin23333-hue`.
 
 Expected: GitHub 能自动识别仓库许可证为 MIT。
 
-- [ ] **Step 3: 创建面向普通用户的 README**
+- [x] **Step 3: 创建面向普通用户的 README**
 
 Document project positioning, Windows/Android support, main modules, local-first privacy, optional AI configuration, prerequisites, install/run/test/build commands, project layout, tutorial entry, contribution and license.
 
 Expected: 新读者不需要查看历史文档就能理解和运行项目。
 
-- [ ] **Step 4: 创建社区文档**
+- [x] **Step 4: 创建社区文档**
 
 Write `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md` and `CHANGELOG.md` with project-specific commands and contact through private GitHub security advisories.
 
 Expected: 贡献、报告漏洞和查看变更都有明确入口。
 
-- [ ] **Step 5: 更新 `package.json` 元数据**
+- [x] **Step 5: 更新 `package.json` 元数据**
 
 Set description, `license: "MIT"`, repository URL, bugs URL and homepage while preserving `private: true`, scripts, dependencies and version.
 
 Expected: 项目元数据与 GitHub 仓库一致，且不会被误发布到 npm。
 
-- [ ] **Step 6: 运行元数据检查并提交**
+- [x] **Step 6: 运行元数据检查并提交**
 
 Run: `npm pkg get name version private license repository.url bugs.url homepage`
 
