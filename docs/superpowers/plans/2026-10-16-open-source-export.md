@@ -218,7 +218,7 @@ Run: `cargo check --manifest-path src-tauri/Cargo.toml`
 
 Expected: both commands exit with code 0; network-only dependency failures are reported separately from source failures.
 
-- [ ] **Step 5: 检查最终 Git 状态**
+- [x] **Step 5: 检查最终 Git 状态**
 
 Run: `git status --short`, `git diff --check`, `git log --oneline --decorate -5`.
 
@@ -229,7 +229,7 @@ Expected: no tracked generated files, no whitespace errors and a small clean pub
 **Files:**
 - Modify: `.git/config` through Git commands
 
-- [ ] **Step 1: 配置远程地址**
+- [x] **Step 1: 配置远程地址**
 
 Run: `git remote add origin https://github.com/chengxin23333-hue/study-space.git`
 
