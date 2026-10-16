@@ -122,7 +122,7 @@ Get-ChildItem .\src-tauri
 
 ```json
 {
-  "productName": "我的考研空间",
+  "productName": "学习空间",
   "version": "0.5.5",
   "identifier": "com.studyspace.desktop"
 }

@@ -1,12 +1,12 @@
 [package]
-name = "my-postgraduate-study-space"
+name = "study-space"
 version = "0.6.0"
 description = "学习空间 Windows and Android application"
-authors = ["Codex"]
+authors = ["chengxin23333-hue"]
 edition = "2021"
 
 [lib]
-name = "my_postgraduate_space_lib"
+name = "study_space_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]

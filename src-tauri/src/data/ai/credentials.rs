@@ -2,6 +2,8 @@ use std::sync::Mutex;
 
 use crate::data::error::DataError;
 
+// Keep the legacy keyring service stable so upgrades can still read keys saved
+// by earlier application versions. This identifier is not shown in the UI.
 const KEYRING_SERVICE: &str = "com.codex.my-postgraduate-study-space";
 const KEYRING_USER: &str = "ai-api-key";
 

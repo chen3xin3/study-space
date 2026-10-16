@@ -165,25 +165,25 @@ Run: `git add .github && git commit -m "ci: add public repository checks"`
 **Files:**
 - Inspect: all tracked files in the open-source repository
 
-- [ ] **Step 1: 检查意外目录和大文件**
+- [x] **Step 1: 检查意外目录和大文件**
 
 Run: `git ls-files` and calculate each tracked file size.
 
 Expected: 不包含 `node_modules`, `dist`, `target`, `release`, `artifacts`, `.visual-qa`, `.android-tools`, `.obsidian` or files larger than 20 MiB.
 
-- [ ] **Step 2: 扫描高风险凭证特征**
+- [x] **Step 2: 扫描高风险凭证特征**
 
 Search tracked text for private key headers, cloud access-key formats, bearer tokens, common API-key assignments and real `.env` files. Review every match and distinguish test fixtures from real credentials.
 
 Expected: 零个真实凭证；测试中的假值保留且不能用于真实服务。
 
-- [ ] **Step 3: 检查公开名称和历史品牌**
+- [x] **Step 3: 检查公开名称和历史品牌**
 
 Run: `rg -n "我的考研空间|my-postgraduate-study-space|19534|AppData" --glob '!package-lock.json' .`
 
 Expected: 用户可见品牌为“学习空间”；包名若保留仅限技术兼容且需在 README 说明。
 
-- [ ] **Step 4: 提交审计修正**
+- [x] **Step 4: 提交审计修正**
 
 Run: `git add -A && git commit -m "chore: complete public source audit"` only when audit fixes exist.
 
