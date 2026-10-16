@@ -152,7 +152,7 @@ flowchart TD
 ## 真实“学习空间”项目的安全检查顺序
 
 ```powershell
-Set-Location -LiteralPath "D:\Desktop\app"
+Set-Location -LiteralPath "D:\Projects\study-space"
 git status --short
 git diff --stat
 git diff --name-only

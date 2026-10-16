@@ -276,7 +276,7 @@ let currentFilter = "all";
 启动本地服务器：
 
 ```powershell
-cd D:\Desktop\app
+cd D:\Projects\study-space
 npm exec vite -- docs/tutorial/labs/web-basics --port 4174
 ```
 

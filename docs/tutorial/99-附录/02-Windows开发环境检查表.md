@@ -122,10 +122,10 @@ rustup show
 
 ## 项目级检查
 
-这些命令在 `D:\Desktop\app` 运行前，先查看状态：
+这些命令在 `D:\Projects\study-space` 运行前，先查看状态：
 
 ```powershell
-Set-Location -LiteralPath "D:\Desktop\app"
+Set-Location -LiteralPath "D:\Projects\study-space"
 git status --short
 ```
 

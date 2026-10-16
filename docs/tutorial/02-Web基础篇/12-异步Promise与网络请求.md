@@ -249,7 +249,7 @@ retryButton.hidden = false;
 启动：
 
 ```powershell
-cd D:\Desktop\app
+cd D:\Projects\study-space
 npm exec vite -- docs/tutorial/labs/web-basics --port 4174
 ```
 

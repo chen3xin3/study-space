@@ -267,7 +267,7 @@ diff 文件头里的 `---` 与 `+++` 表示旧文件和新文件标记，不等�
 只读观察真实项目：
 
 ```powershell
-Set-Location -LiteralPath "D:\Desktop\app"
+Set-Location -LiteralPath "D:\Projects\study-space"
 git status --short
 git diff --stat
 git diff --name-only

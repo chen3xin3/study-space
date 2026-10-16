@@ -105,25 +105,25 @@ Run: `git add .gitignore LICENSE README.md CONTRIBUTING.md SECURITY.md CODE_OF_C
 **Files:**
 - Modify: `docs/tutorial/**/*.md`
 
-- [ ] **Step 1: 检索不适合公开的路径和名称**
+- [x] **Step 1: 检索不适合公开的路径和名称**
 
 Run: `rg -n "D:\\\\Desktop\\\\app|C:\\\\Users\\\\|19534|AppData|codex-clipboard" docs README.md`
 
 Expected: 列出所有需要改成通用示例的位置，不用搜索结果判定凭证安全。
 
-- [ ] **Step 2: 将教程路径改为通用示例**
+- [x] **Step 2: 将教程路径改为通用示例**
 
 Replace project path examples with `D:\Projects\study-space` and explain that readers should substitute their own path.
 
 Expected: 教程命令仍可复制理解，但不暴露原本机目录。
 
-- [ ] **Step 3: 运行教程验证**
+- [x] **Step 3: 运行教程验证**
 
 Run: `npm run tutorial:check` when the script exists; otherwise run the validator documented by `docs/tutorial/README.md`.
 
 Expected: 55 Markdown files, zero validation errors and all validator tests passing.
 
-- [ ] **Step 4: 提交教程清理**
+- [x] **Step 4: 提交教程清理**
 
 Run: `git add docs/tutorial && git commit -m "docs: make tutorial paths portable"`
 

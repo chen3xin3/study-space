@@ -97,7 +97,7 @@ flowchart LR
 
 ### 第一步：找到 Tauri 目录
 
-从项目根目录 `D:\Desktop\app` 查看：
+从项目根目录 `D:\Projects\study-space` 查看：
 
 ```powershell
 Get-ChildItem .\src-tauri
@@ -267,7 +267,7 @@ cargo check --manifest-path src-tauri/Cargo.toml
 
 现象：找不到 `package.json` 或 `Cargo.toml`。
 
-先运行 `Get-Location`。本教程命令默认从 `D:\Desktop\app` 执行，并显式写 `--manifest-path`。
+先运行 `Get-Location`。本教程命令默认从 `D:\Projects\study-space` 执行，并显式写 `--manifest-path`。
 
 ### 端口已被占用
 

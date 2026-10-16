@@ -94,7 +94,7 @@ flowchart LR
 
     Get-Location
 
-预期位于 D:\Desktop\app。若不是，先安全切换。npm 会从当前目录寻找 package.json。
+预期位于 D:\Projects\study-space。若不是，先安全切换。npm 会从当前目录寻找 package.json。
 
 ### 第二步：查看可用脚本
 

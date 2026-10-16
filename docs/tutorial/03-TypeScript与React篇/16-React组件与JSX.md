@@ -288,7 +288,7 @@ export function TaskList({ tasks, onToggle }: TaskListProps) {
 
 ## 运行并观察
 
-在项目根目录 `D:\Desktop\app` 运行：
+在项目根目录 `D:\Projects\study-space` 运行：
 
 ```powershell
 npm exec vite -- docs/tutorial/labs/react-basics --config docs/tutorial/labs/react-basics/vite.config.ts --port 4175
