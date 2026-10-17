@@ -13,7 +13,7 @@
 ## File Map
 
 - Create: `scripts/clean-workspace.mjs` — safe, root-bounded cleanup command with dry-run default.
-- Create: `scripts/clean-workspace.test.mjs` — validates cleanup target resolution and dry-run/apply behavior in temporary directories.
+- Create: `scripts/clean-workspace.node-test.mjs` — validates cleanup target resolution and dry-run/apply behavior in temporary directories without being collected by Vitest.
 - Modify: `package.json` — exposes `clean:check`, `clean:generated`, and the cleanup unit test.
 - Create: `docs/maintainers/workspace-maintenance.md` — explains the single-root workflow, rebuilding, releasing, and GitHub updates.
 - Modify: `README.md` — points contributors to the maintenance guide and states which outputs are intentionally untracked.
@@ -135,13 +135,13 @@ Expected: `checksums.txt` lists the bundle, patches, and manifests.
 ### Task 3: Add a Safe Future Cleanup Command
 
 **Files:**
-- Create: `scripts/clean-workspace.test.mjs`
+- Create: `scripts/clean-workspace.node-test.mjs`
 - Create: `scripts/clean-workspace.mjs`
 - Modify: `package.json`
 
 - [ ] **Step 1: Write failing cleanup safety tests**
 
-Create `scripts/clean-workspace.test.mjs`:
+Create `scripts/clean-workspace.node-test.mjs`:
 
 ```js
 import assert from 'node:assert/strict';
@@ -183,7 +183,7 @@ test('apply removes only allowlisted generated paths', async () => {
 - [ ] **Step 2: Run the tests and confirm they fail**
 
 ```powershell
-node --test scripts/clean-workspace.test.mjs
+node --test scripts/clean-workspace.node-test.mjs
 ```
 
 Expected: FAIL because `scripts/clean-workspace.mjs` does not exist.
@@ -258,7 +258,7 @@ Add these scripts to `package.json`:
 ```json
 "clean:check": "node scripts/clean-workspace.mjs",
 "clean:generated": "node scripts/clean-workspace.mjs --apply",
-"test:clean": "node --test scripts/clean-workspace.test.mjs"
+"test:clean": "node --test scripts/clean-workspace.node-test.mjs"
 ```
 
 Run:
@@ -273,7 +273,7 @@ Expected: three tests pass; dry run lists only allowlisted generated paths.
 - [ ] **Step 5: Commit the maintenance command in the clean repository**
 
 ```powershell
-git -C 'D:\Desktop\app\开源' add scripts/clean-workspace.mjs scripts/clean-workspace.test.mjs package.json
+git -C 'D:\Desktop\app\开源' add scripts/clean-workspace.mjs scripts/clean-workspace.node-test.mjs package.json
 git -C 'D:\Desktop\app\开源' commit -m "chore: add safe workspace cleanup command"
 ```
 

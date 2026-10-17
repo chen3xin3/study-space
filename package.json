@@ -19,7 +19,7 @@
     "clean:check": "node scripts/clean-workspace.mjs",
     "clean:generated": "node scripts/clean-workspace.mjs --apply",
     "test": "vitest",
-    "test:clean": "node --test scripts/clean-workspace.test.mjs",
+    "test:clean": "node --test scripts/clean-workspace.node-test.mjs",
     "test:run": "vitest run",
     "check": "npm run test:run && npm run build",
     "tauri": "tauri"
