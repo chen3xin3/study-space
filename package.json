@@ -16,7 +16,10 @@
   "scripts": {
     "dev": "vite --port 1420",
     "build": "tsc -b && vite build",
+    "clean:check": "node scripts/clean-workspace.mjs",
+    "clean:generated": "node scripts/clean-workspace.mjs --apply",
     "test": "vitest",
+    "test:clean": "node --test scripts/clean-workspace.test.mjs",
     "test:run": "vitest run",
     "check": "npm run test:run && npm run build",
     "tauri": "tauri"
