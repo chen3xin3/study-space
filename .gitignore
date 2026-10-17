@@ -47,7 +47,8 @@ Desktop.ini
 
 # Local build and release artifacts
 artifacts/
-release/
+release/*
+!release/README.md
 .visual-qa/
 .android-tools/
 .gradle/
