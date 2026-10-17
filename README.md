@@ -44,7 +44,7 @@
 ```powershell
 git clone https://github.com/chengxin23333-hue/study-space.git
 Set-Location study-space
-npm install
+npm ci
 npm run dev
 ```
 
@@ -87,10 +87,19 @@ study-space/
 ├─ src/                 React 界面、前端服务与测试
 ├─ src-tauri/           Rust 后端、Tauri 配置与应用图标
 ├─ docs/tutorial/       从零开始的完整学习教程
+├─ scripts/             工作区清理与教程校验工具
 ├─ .github/             GitHub 自动测试与协作模板
 ├─ package.json         前端依赖和命令
 └─ vite.config.ts       Vite 与 Vitest 配置
 ```
+
+## 项目维护
+
+`D:\Desktop\app` 是本机唯一维护目录。生成目录、本地应用数据和发布二进制不会提交到 Git，它们可以按文档重新生成或单独保存。
+
+- [工作区维护、空间清理与 GitHub 更新](docs/maintainers/workspace-maintenance.md)
+- 清理前预览：`npm run clean:check`
+- 清理生成文件：`npm run clean:generated`
 
 ## 从零学习这个项目
 
